@@ -1,0 +1,14 @@
+name: learn-github-actions
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: D3rHase/rsync-deploy-action@latest
+        with:
+          HOST: 34.201.145.84                             # Remote server address / ip - Required: true                     
+          USER: ubuntu                            # Remote server user - Required: true
+          PRIVATE_SSH_KEY: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDG/E05Dg3UO90tMfoLJFhCVIF5uRwZnnaCfabJwaKaWsImSaqrj/ZyfeG1+J1ah/f+sF37srz/jax/u+Z3+BDPhgqYkPvUk4+1mnhFF1nduZzqCuxmoQEgtWZuRZvfj/qeezYtNeEnEIWFmDoHmtmcYH43Ek0pFVPBP2wVRoSMNWCL+SHuILk4NoEmvdN5c3r10AXCOfEGy+Pz0JpWy2WZhVBxX4fktc0eTS/GKAj9QDN64z0UDF77h7cjM8EkbGaZnS12BXmajVBXMPB2lYsdJXpioCZI59iPqt+rCGYIwZYI/R68uFeZvxhgKTSVtKfT9vUWHACDm5o5J8l1Hu7WYy1sufTn/lczXdjso/ULdJOy/wShy/q8H7XWaP6Kt9fTyXIczbi+wRJ5lrD+EDs4KRx2asqqAkkoLyyOasAD2m7jGb3pw5EJeqIEPHcAEDTvLUKp6/Qwjailpw1Xsx7QCZD26EF6mQgw24sAeHPrJMRh9q6ZUxkFeHA9vItpzv0= nishant.kumar.shreevastav@gmail.com
+          REPOSITORY_PATH: *       # Repository path of the file-s you want to upload - Default: * - Required: true
+          SERVER_PATH: .  
