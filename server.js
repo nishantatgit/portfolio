@@ -1,5 +1,5 @@
 const config = {
-	PORT: 4001
+	PORT: 80
 }
 const express = require('express');
 const app = express();
