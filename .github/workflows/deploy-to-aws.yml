@@ -4,8 +4,9 @@ jobs:
   deploy-to-aws:
     runs-on: ubuntu-latest
     steps:
-      - name: sshing to aws account 
-        uses: appleboy/ssh-action@master
+      - name: sshing to aws account
+        - uses: actions/checkout@v3
+        - uses: appleboy/ssh-action@master
         with: 
           host: ${{ secrets.AWS_HOST }}
           username: ${{ secrets.AWS_USER }}
