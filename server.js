@@ -9,6 +9,6 @@ app.get('/', (req, res) => {
 	res.send('index.html');
 });
 app.listen(config.PORT, (req, res) => {
-	console.log('server running at:  ' + config.PORT);
+	console.log('server running at:   ' + config.PORT);
 });
 
