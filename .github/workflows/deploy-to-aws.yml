@@ -1,0 +1,13 @@
+name: deploy to aws
+on: [push]
+jobs: 
+  deploy-to-aws:
+    runs-on: ubuntu-latest
+    steps:
+      - name: sshing to aws account 
+        uses: appleboy/ssh-container@master
+        with: 
+          host: ${{ secrets.AWS_HOST }}
+          username: ${{ secrets.AWS_USER }}
+          key: ${{ secrets.AWS_KEY }}
+          script: sh deploy-to-aws.sh
