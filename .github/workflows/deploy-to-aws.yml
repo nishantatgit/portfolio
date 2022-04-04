@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: sshing to aws account 
-        uses: appleboy/ssh-container@master
+        uses: uses: appleboy/ssh-action@master
         with: 
           host: ${{ secrets.AWS_HOST }}
           username: ${{ secrets.AWS_USER }}
