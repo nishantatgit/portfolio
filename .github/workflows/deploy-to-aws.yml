@@ -12,5 +12,5 @@ jobs:
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.AWS_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          script: cd portfolio && git pull && killall node && npx node server.js
+          script: cd portfolio && git pull && killall node && npm i -g npx && npx node server.js
 
