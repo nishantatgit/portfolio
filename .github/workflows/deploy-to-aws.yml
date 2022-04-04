@@ -12,5 +12,5 @@ jobs:
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.AWS_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          script: cd portfolio && git pull && killall node  &&  /home/ubuntu/.nvm/versions/node/v12.22.11/bin/node  server.js
+          script: cd portfolio && git pull && killall node  && nohup /home/ubuntu/.nvm/versions/node/v12.22.11/bin/node  server.js >> app.log 2>&1 &
 
