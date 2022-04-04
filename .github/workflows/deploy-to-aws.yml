@@ -11,4 +11,4 @@ jobs:
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.AWS_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          script:[pwd, ls -lrt]
+          script: pwd
