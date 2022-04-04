@@ -4,11 +4,13 @@ jobs:
   deploy-to-aws:
     runs-on: ubuntu-latest
     steps:
-      - name: sshing to aws account 
-        uses: appleboy/ssh-action@master
+      - uses: actions/checkout@v3
+      - run: cd ./.github/workflows
+      - uses: appleboy/ssh-action@master
         with: 
           host: ${{ secrets.AWS_HOST }}
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.AWS_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          script:[pwd, ls -lrt]
+          script: cd portfolio && git pull && killall node  && nohup /home/ubuntu/.nvm/versions/node/v12.22.11/bin/node  server.js >> app.log 2>&1 &
+
